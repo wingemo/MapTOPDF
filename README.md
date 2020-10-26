@@ -1,5 +1,5 @@
 # MapTOPDF
-## Free GUI software that converts a folder of files into a single pdf.
+ Free GUI software that converts a folder of files into a single pdf.
 
-### pyinstaller is missing hook script to run docx2pdf.
+pyinstaller is missing hook script to run docx2pdf.
 [Issue.](https://github.com/AlJohri/docx2pdf/issues/5)
