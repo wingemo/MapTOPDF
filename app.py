@@ -12,7 +12,7 @@ from ttkthemes import ThemedStyle
 
 class App(tk.Frame):
     def __init__(self, master):
-        """The main class that handles the GUI"""
+        """The main function that handles the GUI"""
         
         super().__init__(master)
         self.pack()
