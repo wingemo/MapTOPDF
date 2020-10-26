@@ -1,13 +1,14 @@
+import sys,os
+import tkinter as tk
+import time
+import _thread as thread
+import tkinter.ttk as ttk
 from docx2pdf import convert
 from PyPDF2 import PdfFileMerger
 from PIL import Image
-import sys,os
-import tkinter as tk
 from tkinter import messagebox, Menu
-import tkinter.ttk as ttk
 from ttkthemes import ThemedStyle
-import time
-import _thread as thread
+
 
 class App(tk.Frame):
     def __init__(self, master):
