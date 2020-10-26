@@ -121,7 +121,7 @@ class App(tk.Frame):
 
 
 root = tk.Tk()
-root.title("Map To PDF - Produced for Swedbank AB by Philip Wingemo")
+root.title("Map To PDF - Produced for Swedbank Philip Wingemo")
 root.geometry("700x60")
 style = ThemedStyle(root)
 style.set_theme("plastik")
