@@ -29,8 +29,7 @@ class App(tk.Frame):
 
         self.entrythingy.event_add('<<Paste>>', '<Button-3>')
 
-        self.progress = ttk.Progressbar(root,
-            length = 100, mode = 'indeterminate')
+        self.progress = ttk.Progressbar(root, length = 100, mode = 'indeterminate')
         self.progress.place(x = 0, y = 40, height = 15, width = 620)
 
         self.entrythingy.insert(0, "Klistra in sökvägen")
