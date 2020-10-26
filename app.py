@@ -37,14 +37,15 @@ class App(tk.Frame):
         self.entrythingy.bind('<Button-1>', self.on_click)
 
     def on_click(self, master):
+        """Deletes placeholder for input"""
         self.entrythingy.configure(state="NORMAL")
         self.entrythingy.delete(0, "")
     
     def thread_start(self):
-         thread.start_new_thread(ConvertHanlder(self))
+        thread.start_new_thread(ConvertHanlder(self))
 
     def exitProgram(self):
-         """Closes and ends the program"""
+        """Closes and ends the program"""
         exit()
 
 root = tk.Tk()
