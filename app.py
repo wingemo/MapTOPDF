@@ -22,16 +22,18 @@ class App(tk.Frame):
         # and split into a list of lines:
         self.w = ttk.Button(text ="Merge", command = self.thread_start)
         self.w.place(x = 629, y = 0, height = 35)
-
-        # and split into a list of lines:
+        
+        # and split into a list of lines:)
         self.entrythingy = ttk.Entry(font = "Calibri 12")
         self.entrythingy.place(x = 0, y = 0, height = 35, width = 620)
+        self.entrythingy.insert(0, "Klistra in sökvägen")
+        self.entrythingy.configure(state="DISABLED")
+                
+        # and split into a list of lines:)
         self.contents = tk.StringVar()
         self.entrythingy["textvariable"] = self.contents
         self.entrythingy.bind('<Key-Return>', self.print_contents)
         self.entrythingy.event_add('<<Paste>>', '<Button-3>')
-        self.entrythingy.insert(0, "Klistra in sökvägen")
-        self.entrythingy.configure(state="DISABLED")
         self.entrythingy.bind('<Button-1>', self.on_click)
         self.entrythingy.bind('<Button-3>', self.on_click)
 
