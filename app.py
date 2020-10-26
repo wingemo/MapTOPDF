@@ -59,6 +59,7 @@ class App(tk.Frame):
         """Closes and ends the program"""
         exit()
 
+# Application entry point
 root = tk.Tk()
 root.title("Map To PDF - Produced by Philip Wingemo")
 root.geometry("700x60")
