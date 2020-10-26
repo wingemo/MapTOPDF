@@ -44,6 +44,7 @@ class App(tk.Frame):
          thread.start_new_thread(ConvertHanlder(self))
 
     def exitProgram(self):
+         """Closes and ends the program"""
         exit()
 
 root = tk.Tk()
