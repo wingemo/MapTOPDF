@@ -25,8 +25,7 @@ class App(tk.Frame):
 
         self.entrythingy["textvariable"] = self.contents
 
-        self.entrythingy.bind('<Key-Return>',
-                             self.print_contents)
+        self.entrythingy.bind('<Key-Return>', self.print_contents)
 
         self.entrythingy.event_add('<<Paste>>', '<Button-3>')
 
