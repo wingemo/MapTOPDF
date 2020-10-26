@@ -20,15 +20,10 @@ class App(tk.Frame):
         self.entrythingy = ttk.Entry(font = "Calibri 12")
         self.entrythingy.place(x = 0, y = 0, height = 35, width = 620)
 
-        # Create the application variable.
         self.contents = tk.StringVar()
 
-        # Tell the entry widget to watch this variable.
         self.entrythingy["textvariable"] = self.contents
 
-
-        # Define a callback for when the user hits return.
-        # It prints the current value of the variable.
         self.entrythingy.bind('<Key-Return>',
                              self.print_contents)
 
