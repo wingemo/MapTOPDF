@@ -10,6 +10,8 @@ from tkinter import messagebox, Menu
 from ttkthemes import ThemedStyle
 
 class App(tk.Frame):
+""" This class provides utility functions to work with Strings """
+
     def __init__(self, master):
         """The main function that handles the GUI"""
         super().__init__(master)
