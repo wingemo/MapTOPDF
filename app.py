@@ -14,6 +14,7 @@ class App(tk.Frame):
 
     def __init__(self, master):
         """The main function that handles the GUI"""
+       
         super().__init__(master)
         self.pack()
         
