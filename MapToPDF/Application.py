@@ -25,7 +25,7 @@ import tkinter.ttk as ttk
 from tkinter import messagebox, Menu
 from ttkthemes import ThemedStyle
 
-class App(tk.Frame):
+class Application(tk.Frame):
 """ This class provides utility functions"""
 
     def __init__(self, master):
