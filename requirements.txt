@@ -1,4 +1,5 @@
-docx2pdf==any
-PyPDF2==any
-PIL==any
+###### Requirements without Version Specifiers ######`
+docx2pdf
+PyPDF2
+PIL
  
