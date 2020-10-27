@@ -48,8 +48,8 @@ class ConvertHandler:
                     continue
                 else:
                     continue
-        except:
-            messagebox.showerror("Info", "Error")
+        except Exception as e:
+            messagebox.showerror("Info", "Error" + str(e))
  
 
     def merge_files(self):
