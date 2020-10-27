@@ -26,6 +26,7 @@ from PIL import Image
 
 class DeleteHandler:
 """ This class provides utility functions"""
+   PDF_OUTPUT_NAME = "output.pdf"
 
    def __init__(self, path):
         """Deletes placeholder for input"""
