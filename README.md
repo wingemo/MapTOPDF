@@ -1,6 +1,6 @@
 # MapTOPDF
-[![Python](https://img.shields.io/pypi/pyversions/tensorflow.svg?style=plastic)](https://badge.fury.io/py/tensorflow)
-
+[![Python](https://img.shields.io/pypi/pyversions/tensorflow.svg?style=plastic)](https://badge.fury.io/py/tensorflow) 
+<img alt="AUR license" src="https://img.shields.io/aur/license/android-studio">
 GUI software that converts a folder of files into a single pdf.
  
 ![Image of Yaktocat](https://github.com/wingemo/MapToPDF/blob/main/bild.png)
