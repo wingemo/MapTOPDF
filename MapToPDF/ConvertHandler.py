@@ -27,6 +27,9 @@ from PIL import Image
 class ConvertHandler:
 """ This class provides utility functions"""
 
+   SUCCESS_MESSAGE = "All files have been compiled into a pdf - Philip"
+   MESSAGEBOX_TITLE = "INFO"
+
    def __init__(self):
         """Deletes placeholder for input"""
         print_contents(self)
@@ -88,5 +91,5 @@ class ConvertHandler:
                 os.remove(path + "\\" + filename)
 
         update_progressbar(100)
-        messagebox.showinfo("Info", "All files have been compiled into a pdf - Philip")
+        messagebox.showinfo(MESSAGEBOX_TITLE, SUCCESS_MESSAGE)
   
