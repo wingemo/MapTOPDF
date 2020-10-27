@@ -28,9 +28,6 @@ from ttkthemes import ThemedStyle
 class FileConverter:
 """ This class provides utility functions"""
 
-   MESSAGEBOX_TITLE = "INFO"
-   SUCCESS_MESSAGE = "All files have been compiled into a pdf - Philip"
-
    def __init__(self, path):
         """Deletes placeholder for input"""
         files_to_pdf(self)
