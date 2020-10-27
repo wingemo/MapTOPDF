@@ -29,6 +29,7 @@ class ConvertHandler:
         self.progress.update()
         x = 10
 
+        # and split into a list of lines:
         try:
             path = self.contents.get()
 
@@ -44,7 +45,7 @@ class ConvertHandler:
         except:
             messagebox.showerror("Info", "Error")
 
-
+        # and split into a list of lines:
         self.progress['value'] = x
         self.progress.update()
         for filename in os.listdir(path):
@@ -55,40 +56,33 @@ class ConvertHandler:
                 continue
             else:
                 continue
+ 
 
+        # and split into a list of lines:
         self.progress['value'] = 30
         self.progress.update()
-
         open_pdf = []
         x = [a for a in os.listdir(path) if a.endswith(".pdf")]
         merger = PdfFileMerger()
-
         for pdf in x:
             f = open(path + "\\"+ pdf, 'rb')
             open_pdf.append(f)
             merger.append(f)
-
-
-        self.progress['value'] = 40
-        self.progress.update()
-
         with open(path + "\\"+ "result.pdf", "wb") as fout:
             merger.write(fout)
-
         for pdf in open_pdf:
             pdf.close()
             merger.close()
 
+        # and split into a list of lines:
         self.progress['value'] = 50
         self.progress.update()
-
         for filename in os.listdir(path):
             if filename != "result.pdf":
                 os.remove(path + "\\" + filename)
 
         self.progress['value'] = 100
         self.progress.update()
-
         messagebox.showinfo("Info", "All files have been compiled into a pdf - Philip")
 
         x = 0
