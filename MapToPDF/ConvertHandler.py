@@ -60,7 +60,7 @@ class ConvertHandler:
                 continue
  
 
-def merge_to_one_pdf(self):
+def merge_files(self):
         # and split into a list of lines:
         self.progress['value'] = 30
         self.progress.update()
@@ -77,6 +77,7 @@ def merge_to_one_pdf(self):
             pdf.close()
             merger.close()
 
+def delete_files(self):
         # and split into a list of lines:
         self.progress['value'] = 50
         self.progress.update()
