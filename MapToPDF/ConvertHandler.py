@@ -62,7 +62,7 @@ class ConvertHandler:
 
     def delete_files(self):
         """Deletes placeholder for input"""
-      try:
+       try:
             DeleteHandler(self,path)
         except Exception as e:
             messagebox.showerror("Info", "Error" + str(e))
