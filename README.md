@@ -1,5 +1,6 @@
 # MapTOPDF
- Free GUI software that converts a folder of files into a single pdf.
+[![Python](https://img.shields.io/pypi/pyversions/tensorflow.svg?style=plastic)](https://badge.fury.io/py/tensorflow)
+GUI software that converts a folder of files into a single pdf.
  
 ![Image of Yaktocat](https://github.com/wingemo/MapToPDF/blob/main/bild.png)
 ## Acknowledge
