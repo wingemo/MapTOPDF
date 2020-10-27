@@ -55,14 +55,14 @@ class ConvertHandler:
  
     def merge_files(self):
         """Deletes placeholder for input"""
-       try:
+        try:
             FileMerger(self,path)
         except Exception as e:
             messagebox.showerror("Info", "Error" + str(e))
 
     def delete_files(self):
         """Deletes placeholder for input"""
-       try:
+        try:
             DeleteHandler(self,path)
         except Exception as e:
             messagebox.showerror("Info", "Error" + str(e))
