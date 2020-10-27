@@ -27,7 +27,7 @@ class ConvertHandler:
         print_contents(self)
         path = self.contents.get()
 
-   def update_progressbar(value)
+   def update_progressbar(value):
        self.progress['value'] = value
        self.progress.update()
 
