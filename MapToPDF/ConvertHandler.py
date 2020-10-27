@@ -30,7 +30,7 @@ class ConvertHandler:
         x = 10
 
    def word_to_pdf(self): 
-   """Deletes placeholder for input"""
+       """Deletes placeholder for input"""
         try:
             path = self.contents.get()
 
@@ -47,7 +47,7 @@ class ConvertHandler:
             messagebox.showerror("Info", "Error")
 
     def image_to_pdf(self):
-    """Deletes placeholder for input"""
+        """Deletes placeholder for input"""
         self.progress['value'] = x
         self.progress.update()
         for filename in os.listdir(path):
@@ -61,7 +61,7 @@ class ConvertHandler:
  
 
     def merge_files(self):
-    """Deletes placeholder for input"""
+        """Deletes placeholder for input"""
         self.progress['value'] = 30
         self.progress.update()
         open_pdf = []
