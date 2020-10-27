@@ -27,6 +27,10 @@ class ConvertHandler:
         print_contents(self)
         path = self.contents.get()
 
+   def update_progressbar()
+       self.progress['value'] = 10
+       self.progress.update()
+
    def word_to_pdf(self): 
        """Deletes placeholder for input"""
         self.progress['value'] = 10
@@ -90,17 +94,14 @@ class ConvertHandler:
 
     def delete_files(self):
     """Deletes placeholder for input"""
-        self.progress['value'] = 50
-        self.progress.update()
+        update_progressbar(50)
 
         # and split into a list of lines:
         for filename in os.listdir(path):
             if filename != "result.pdf":
                 os.remove(path + "\\" + filename)
 
-        self.progress['value'] = 100
-        self.progress.update()
+        update_progressbar(100)
         messagebox.showinfo("Info", "All files have been compiled into a pdf - Philip")
 
-        x = 0
         self.progress['value'] = 0
