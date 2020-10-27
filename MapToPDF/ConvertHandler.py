@@ -23,6 +23,7 @@ import sys,os
 from docx2pdf import convert
 from PyPDF2 import PdfFileMerger
 from PIL import Image
+from tkinter import messagebox
 
 class ConvertHandler:
 """ This class provides utility functions"""
