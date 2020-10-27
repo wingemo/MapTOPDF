@@ -1,5 +1,5 @@
 # MapTOPDF
-<img alt="AUR license" src="https://img.shields.io/aur/license/android-studio"> <img alt="GitHub Pipenv locked Python version" src="https://img.shields.io/github/pipenv/locked/python-version/metabolize/rq-dashboard-on-heroku"> <img alt="GitHub labels" src="https://img.shields.io/github/labels/atom/atom/help-wanted">
+<img alt="AUR license" src="https://img.shields.io/aur/license/android-studio"> <img alt="GitHub Pipenv locked Python version" src="https://img.shields.io/github/pipenv/locked/python-version/metabolize/rq-dashboard-on-heroku"> <img alt="GitHub labels" src="https://img.shields.io/github/labels/atom/atom/help-wanted"><img alt="F-Droid" src="https://img.shields.io/f-droid/v/org.thosp.yourlocalweathe">
 
 GUI software that converts a folder of files into a single pdf.
  
