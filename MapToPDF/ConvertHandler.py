@@ -27,8 +27,8 @@ from PIL import Image
 class ConvertHandler:
 """ This class provides utility functions"""
 
-   SUCCESS_MESSAGE = "All files have been compiled into a pdf - Philip"
    MESSAGEBOX_TITLE = "INFO"
+   SUCCESS_MESSAGE = "All files have been compiled into a pdf - Philip"
    PDF_OUTPUT_NAME = "output.pdf"
 
    def __init__(self):
