@@ -32,7 +32,8 @@ class ConvertHandler:
         self.progress['value'] = 10
         self.progress.update()
         x = 10
-
+ 
+        # and split into a list of lines:
         try:
             for filename in os.listdir(path):
                 if filename.endswith(".docx") or filename.endswith(".doc"):
@@ -51,6 +52,7 @@ class ConvertHandler:
         self.progress['value'] = x
         self.progress.update()
 
+        # and split into a list of lines:
         for filename in os.listdir(path):
             if filename.endswith(".jpg") or filename.endswith(".PNG")  or filename.endswith(".png"):
                 image1 = Image.open(path + "\\" + filename)
@@ -66,17 +68,22 @@ class ConvertHandler:
         self.progress['value'] = 30
         self.progress.update()
 
+        # and split into a list of lines:
         open_pdf = []
         x = [a for a in os.listdir(path) if a.endswith(".pdf")]
         merger = PdfFileMerger()
 
+        # and split into a list of lines:
         for pdf in x:
             f = open(path + "\\"+ pdf, 'rb')
             open_pdf.append(f)
             merger.append(f)
+
+        # and split into a list of lines:
         with open(path + "\\"+ "result.pdf", "wb") as fout:
             merger.write(fout)
 
+        # and split into a list of lines:
         for pdf in open_pdf:
             pdf.close()
             merger.close()
@@ -86,6 +93,7 @@ class ConvertHandler:
         self.progress['value'] = 50
         self.progress.update()
 
+        # and split into a list of lines:
         for filename in os.listdir(path):
             if filename != "result.pdf":
                 os.remove(path + "\\" + filename)
