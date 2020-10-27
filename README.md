@@ -4,10 +4,7 @@
 GUI software that converts a folder of files into a single pdf.
  
 Files:
-Word
-jpg
-png
-pdf
+Word, JPG, PNG, PDF
 
 ![Image of Yaktocat](https://github.com/wingemo/MapToPDF/blob/main/bild.png)
 ## Acknowledge
