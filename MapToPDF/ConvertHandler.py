@@ -27,8 +27,8 @@ class ConvertHandler:
         print_contents(self)
         path = self.contents.get()
 
-   def update_progressbar()
-       self.progress['value'] = 10
+   def update_progressbar(value)
+       self.progress['value'] = value
        self.progress.update()
 
    def files_to_pdf(self): 
