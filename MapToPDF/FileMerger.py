@@ -32,7 +32,7 @@ class FileConverter:
    def __init__(self, path):
         """Deletes placeholder for input"""
         self.path = path
-        merge_files(self
+        merge_files(self)
 
    def merge_files(self):
         """Deletes placeholder for input"""
