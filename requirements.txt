@@ -1,5 +1,6 @@
 ###### Requirements without Version Specifiers ######`
+ttkthemes
 docx2pdf
 PyPDF2
 PIL
- 
+
