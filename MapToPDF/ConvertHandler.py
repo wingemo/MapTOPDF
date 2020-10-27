@@ -33,20 +33,15 @@ class ConvertHandler:
 
    def files_to_pdf(self): 
        """Deletes placeholder for input"""
-        self.progress['value'] = 10
-        self.progress.update()
-        x = 10
- 
+        update_progressbar(10)
+        
         # and split into a list of lines:
         try:
             for filename in os.listdir(path):
                 if filename.endswith(".docx") or filename.endswith(".doc"):
                     convert(path + "\\" + filename)
-                    x = x + 2
-                    self.progress['value'] = x
-                    self.progress.update()
                     continue
-                if filename.endswith(".jpg") or filename.endswith(".PNG")  or filename.endswith(".png"):
+                elif filename.endswith(".jpg") or filename.endswith(".PNG")  or filename.endswith(".png"):
                     image1 = Image.open(path + "\\" + filename)
                     im1 = image1.convert('RGB')
                     im1.save(path + "\\" + filename + ".pdf")
@@ -93,5 +88,4 @@ class ConvertHandler:
 
         update_progressbar(100)
         messagebox.showinfo("Info", "All files have been compiled into a pdf - Philip")
-
-        self.progress['value'] = 0
+        update_progressbar(0)
