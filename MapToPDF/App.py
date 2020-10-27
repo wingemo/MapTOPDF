@@ -42,6 +42,7 @@ class App(tk.Frame):
         # and split into a list of lines:
         self.progress = ttk.Progressbar(root, length = 100, mode = 'indeterminate')
         self.progress.place(x = 0, y = 40, height = 15, width = 620)
+        self.progress['maximum'] = 100
         
         # and split into a list of lines:
         self.w = ttk.Button(text ="Merge", command = self.thread_start)
