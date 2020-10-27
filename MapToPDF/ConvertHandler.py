@@ -27,6 +27,7 @@ class ConvertHandler:
         print_contents(self)
         path = self.contents.get()
 
+        # and split into a list of lines:
         update_progressbar(10)
         files_to_pdf(self)
         update_progressbar(30)
@@ -76,7 +77,6 @@ class ConvertHandler:
 
     def delete_files(self):
         """Deletes placeholder for input"""
-        # and split into a list of lines:
         for filename in os.listdir(path):
             if filename != "result.pdf":
                 os.remove(path + "\\" + filename)
