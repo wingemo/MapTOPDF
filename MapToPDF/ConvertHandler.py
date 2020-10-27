@@ -31,7 +31,7 @@ class ConvertHandler:
        self.progress['value'] = 10
        self.progress.update()
 
-   def word_to_pdf(self): 
+   def files_to_pdf(self): 
        """Deletes placeholder for input"""
         self.progress['value'] = 10
         self.progress.update()
@@ -46,25 +46,15 @@ class ConvertHandler:
                     self.progress['value'] = x
                     self.progress.update()
                     continue
+                if filename.endswith(".jpg") or filename.endswith(".PNG")  or filename.endswith(".png"):
+                    image1 = Image.open(path + "\\" + filename)
+                    im1 = image1.convert('RGB')
+                    im1.save(path + "\\" + filename + ".pdf")
+                    continue
                 else:
                     continue
         except:
             messagebox.showerror("Info", "Error")
-
-    def image_to_pdf(self):
-        """Deletes placeholder for input"""
-        self.progress['value'] = x
-        self.progress.update()
-
-        # and split into a list of lines:
-        for filename in os.listdir(path):
-            if filename.endswith(".jpg") or filename.endswith(".PNG")  or filename.endswith(".png"):
-                image1 = Image.open(path + "\\" + filename)
-                im1 = image1.convert('RGB')
-                im1.save(path + "\\" + filename + ".pdf")
-                continue
-            else:
-                continue
  
 
     def merge_files(self):
