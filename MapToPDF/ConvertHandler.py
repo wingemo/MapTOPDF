@@ -62,9 +62,10 @@ class ConvertHandler:
 
     def delete_files(self):
         """Deletes placeholder for input"""
-        for filename in os.listdir(path):
-            if filename != PDF_OUTPUT_NAME:
-                os.remove(path + "\\" + filename)
+      try:
+            DeleteHandler(self,path)
+        except Exception as e:
+            messagebox.showerror("Info", "Error" + str(e))
 
         update_progressbar(100)
         messagebox.showinfo(MESSAGEBOX_TITLE, SUCCESS_MESSAGE)
