@@ -1,4 +1,4 @@
-docx2pdf
-PyPDF2
-PIL
+docx2pdf==any
+PyPDF2==any
+PIL==any
  
