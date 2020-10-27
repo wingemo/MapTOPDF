@@ -22,18 +22,14 @@
 class ConvertHandler:
    def __init__(self):
         print_contents(self)
-    
-   def print_contents(self):
-        self.progress['maximum'] = 100
-        self.progress['value'] = 10
-        self.progress.update()
-        x = 10
+        path = self.contents.get()
 
    def word_to_pdf(self): 
        """Deletes placeholder for input"""
+        self.progress['value'] = 10
+        self.progress.update()
+        x = 10
         try:
-            path = self.contents.get()
-
             for filename in os.listdir(path):
                 if filename.endswith(".docx") or filename.endswith(".doc"):
                     convert(path + "\\" + filename)
