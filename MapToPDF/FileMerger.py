@@ -1,4 +1,6 @@
-  """Deletes placeholder for input"""
+  PDF_OUTPUT_NAME = "output.pdf"
+
+"""Deletes placeholder for input"""
         open_pdf = []
         x = [a for a in os.listdir(path) if a.endswith(".pdf")]
         merger = PdfFileMerger()
