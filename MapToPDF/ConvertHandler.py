@@ -29,6 +29,7 @@ class ConvertHandler:
         self.progress.update()
         x = 10
 
+   def word_to_pdf(self):
         # and split into a list of lines:
         try:
             path = self.contents.get()
@@ -45,6 +46,7 @@ class ConvertHandler:
         except:
             messagebox.showerror("Info", "Error")
 
+ def image_to_pdf(self):
         # and split into a list of lines:
         self.progress['value'] = x
         self.progress.update()
@@ -58,6 +60,7 @@ class ConvertHandler:
                 continue
  
 
+def merge_to_one_pdf(self):
         # and split into a list of lines:
         self.progress['value'] = 30
         self.progress.update()
