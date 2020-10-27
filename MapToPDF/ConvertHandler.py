@@ -46,7 +46,7 @@ class ConvertHandler:
         except:
             messagebox.showerror("Info", "Error")
 
- def image_to_pdf(self):
+     def image_to_pdf(self):
         # and split into a list of lines:
         self.progress['value'] = x
         self.progress.update()
@@ -60,7 +60,7 @@ class ConvertHandler:
                 continue
  
 
-def merge_files(self):
+     def merge_files(self):
         # and split into a list of lines:
         self.progress['value'] = 30
         self.progress.update()
@@ -77,7 +77,7 @@ def merge_files(self):
             pdf.close()
             merger.close()
 
-def delete_files(self):
+     def delete_files(self):
         # and split into a list of lines:
         self.progress['value'] = 50
         self.progress.update()
