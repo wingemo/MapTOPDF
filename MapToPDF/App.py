@@ -24,9 +24,6 @@ import tkinter as tk
 import time
 import _thread as thread
 import tkinter.ttk as ttk
-from docx2pdf import convert
-from PyPDF2 import PdfFileMerger
-from PIL import Image
 from tkinter import messagebox, Menu
 from ttkthemes import ThemedStyle
 
