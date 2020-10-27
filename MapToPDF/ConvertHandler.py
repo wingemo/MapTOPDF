@@ -27,15 +27,20 @@ class ConvertHandler:
         print_contents(self)
         path = self.contents.get()
 
+        update_progressbar(10)
+        files_to_pdf(self)
+        update_progressbar(30)
+        merge_files(self)
+        update_progressbar(50)
+        delete_files(self)
+        update_progressbar(0)
+
    def update_progressbar(value):
        self.progress['value'] = value
        self.progress.update()
 
    def files_to_pdf(self): 
        """Deletes placeholder for input"""
-        update_progressbar(10)
-        
-        # and split into a list of lines:
         try:
             for filename in os.listdir(path):
                 if filename.endswith(".docx") or filename.endswith(".doc"):
@@ -51,36 +56,26 @@ class ConvertHandler:
         except Exception as e:
             messagebox.showerror("Info", "Error" + str(e))
  
-
     def merge_files(self):
         """Deletes placeholder for input"""
-        self.progress['value'] = 30
-        self.progress.update()
-
-        # and split into a list of lines:
         open_pdf = []
         x = [a for a in os.listdir(path) if a.endswith(".pdf")]
         merger = PdfFileMerger()
 
-        # and split into a list of lines:
         for pdf in x:
             f = open(path + "\\"+ pdf, 'rb')
             open_pdf.append(f)
             merger.append(f)
 
-        # and split into a list of lines:
         with open(path + "\\"+ "result.pdf", "wb") as fout:
             merger.write(fout)
 
-        # and split into a list of lines:
         for pdf in open_pdf:
             pdf.close()
             merger.close()
 
     def delete_files(self):
-    """Deletes placeholder for input"""
-        update_progressbar(50)
-
+        """Deletes placeholder for input"""
         # and split into a list of lines:
         for filename in os.listdir(path):
             if filename != "result.pdf":
@@ -88,4 +83,4 @@ class ConvertHandler:
 
         update_progressbar(100)
         messagebox.showinfo("Info", "All files have been compiled into a pdf - Philip")
-        update_progressbar(0)
+  
