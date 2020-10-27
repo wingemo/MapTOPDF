@@ -35,7 +35,7 @@ class FileConverter:
         merge_files(self
 
    def merge_files(self):
-   """Deletes placeholder for input"""
+        """Deletes placeholder for input"""
         open_pdf = []
         x = [a for a in os.listdir(path) if a.endswith(".pdf")]
         merger = PdfFileMerger()
