@@ -37,6 +37,7 @@ class ConvertHandler:
         update_progressbar(0)
 
    def update_progressbar(value):
+       """Deletes placeholder for input"""
        self.progress['value'] = value
        self.progress.update()
 
