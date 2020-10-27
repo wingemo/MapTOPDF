@@ -29,6 +29,7 @@ class ConvertHandler:
 
    SUCCESS_MESSAGE = "All files have been compiled into a pdf - Philip"
    MESSAGEBOX_TITLE = "INFO"
+   PDF_OUTPUT_NAME = "output.pdf"
 
    def __init__(self):
         """Deletes placeholder for input"""
@@ -77,7 +78,7 @@ class ConvertHandler:
             open_pdf.append(f)
             merger.append(f)
 
-        with open(path + "\\"+ "result.pdf", "wb") as fout:
+        with open(path + "\\"+ PDF_OUTPUT_NAME, "wb") as fout:
             merger.write(fout)
 
         for pdf in open_pdf:
@@ -87,7 +88,7 @@ class ConvertHandler:
     def delete_files(self):
         """Deletes placeholder for input"""
         for filename in os.listdir(path):
-            if filename != "result.pdf":
+            if filename != PDF_OUTPUT_NAME:
                 os.remove(path + "\\" + filename)
 
         update_progressbar(100)
