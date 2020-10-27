@@ -45,35 +45,12 @@ class ConvertHandler:
         merge_files(self)
         update_progressbar(50)
         delete_files(self)
-        update_progressbar(0)
-
-   def update_progressbar(value):
-       """Deletes placeholder for input"""
-       self.progress['value'] = value
-       self.progress.update()
-
-   def word_to_pdf(self):
-       """Deletes placeholder for input"""
-       convert(path + "\\" + filename)
-
-   def image_to_pdf(self):
-       """Deletes placeholder for input"""
-       image1 = Image.open(path + "\\" + filename)
-       im1 = image1.convert('RGB')
-       im1.save(path + "\\" + filename + ".pdf")
+        update_progressbar(0))
 
    def files_to_pdf(self): 
         """Deletes placeholder for input"""
         try:
-            for filename in os.listdir(path):
-                if filename.endswith(".docx") or filename.endswith(".doc"):
-                    multiprocessing.Process(target=word_to_pdf, args=(pdf))
-                    continue
-                elif filename.endswith(".jpg") or filename.endswith(".PNG")  or filename.endswith(".png"):
-                    multiprocessing.Process(target=image_to_pdf, args=(pdf))
-                    continue
-                else:
-                    continue
+            FileConverter(self,path)
         except Exception as e:
             messagebox.showerror("Info", "Error" + str(e))
  
