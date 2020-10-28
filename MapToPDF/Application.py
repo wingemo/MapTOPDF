@@ -26,10 +26,10 @@ from tkinter import messagebox, Menu
 from ttkthemes import ThemedStyle
 
 class Application(tk.Frame):
-""" This class provides utility functions"""
+""" This class provides utility functions for GUI and launch of ConvertHandler class """
 
     def __init__(self, master):
-        """The main function that handles the GUI"""
+        """The main function that handles the graphical user interface"""
        
         super().__init__(master)
         self.pack()
@@ -49,7 +49,7 @@ class Application(tk.Frame):
         self.entrythingy.insert(0, "Klistra in sökvägen")
         self.entrythingy.configure(state="DISABLED")
                 
-        # and split into a list of lines:)
+        # Binds events for the input
         self.contents = tk.StringVar()
         self.entrythingy["textvariable"] = self.contents
         self.entrythingy.bind('<Key-Return>', self.print_contents)
