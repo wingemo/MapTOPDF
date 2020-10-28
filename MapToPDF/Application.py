@@ -49,7 +49,7 @@ class Application(tk.Frame):
         self.entrythingy.insert(0, "Klistra in sökvägen")
         self.entrythingy.configure(state="DISABLED")
                 
-        # Binds events for the input
+        # Binds events for the input object
         self.contents = tk.StringVar()
         self.entrythingy["textvariable"] = self.contents
         self.entrythingy.bind('<Key-Return>', self.print_contents)
