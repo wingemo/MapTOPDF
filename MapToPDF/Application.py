@@ -29,7 +29,7 @@ class Application(tk.Frame):
 """ This class provides functions for graphical user interface and ConvertHandler object creation """
 
     def __init__(self, master):
-        """The function that handles the creation of graphical user interface object"""
+        """This function handles the creation of graphical user interface object"""
        
         super().__init__(master)
         self.pack()
