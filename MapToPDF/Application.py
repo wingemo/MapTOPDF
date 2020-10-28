@@ -63,11 +63,11 @@ class Application(tk.Frame):
         self.entrythingy.delete(0, "")
     
     def thread_start(self):
-        """Deletes placeholder for input"""
+        """Starts the ConvertHandler class in a new thread"""
         thread.start_new_thread(ConvertHanlder(self))
 
     def exitProgram(self):
-        """Closes and ends the program"""
+        """The function turns off the program"""
         exit()
 
 # Application entry point
