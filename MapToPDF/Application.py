@@ -26,10 +26,10 @@ from tkinter import messagebox, Menu
 from ttkthemes import ThemedStyle
 
 class Application(tk.Frame):
-""" This class provides utility functions for GUI and launch of ConvertHandler class """
+""" This class provides functions for graphical user interface and ConvertHandler object creation """
 
     def __init__(self, master):
-        """The main function that handles the graphical user interface"""
+        """The function that handles the creation of graphical user interface object"""
        
         super().__init__(master)
         self.pack()
