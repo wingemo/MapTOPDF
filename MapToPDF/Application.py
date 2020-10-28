@@ -34,16 +34,16 @@ class Application(tk.Frame):
         super().__init__(master)
         self.pack()
         
-        # and split into a list of lines:
+        # Adds progressbar to the graphical user interface
         self.progress = ttk.Progressbar(root, length = 100, mode = 'indeterminate')
         self.progress.place(x = 0, y = 40, height = 15, width = 620)
         self.progress['maximum'] = 100
         
-        # and split into a list of lines:
+        # Adds button to the graphical user interface
         self.w = ttk.Button(text ="Merge", command = self.thread_start)
         self.w.place(x = 629, y = 0, height = 35)
         
-        # and split into a list of lines:)
+        # Adds entry to the graphical user interface
         self.entrythingy = ttk.Entry(font = "Calibri 12")
         self.entrythingy.place(x = 0, y = 0, height = 35, width = 620)
         self.entrythingy.insert(0, "Klistra in sökvägen")
