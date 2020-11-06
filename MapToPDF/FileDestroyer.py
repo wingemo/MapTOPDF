@@ -24,17 +24,18 @@ import multiprocessing
 from docx2pdf import convert
 from PIL import Image
 
-class DeleteHandler:
-""" This class provides utility functions"""
+class FileDestroyer:
+   """ This class provides utility functions"""
    PDF_OUTPUT_NAME = "output.pdf"
 
    def __init__(self, path):
         """Deletes placeholder for input"""
-        self.path = path
-        files_to_pdf(self)
+        self.path = path + "\\" + "resultat"
+        self.delete_files(self.path)
 
-   def delete_files(self): 
+   def delete_files(self, path):
         """Deletes placeholder for input"""
-        for filename in os.listdir(self.path):
-            if filename != PDF_OUTPUT_NAME:
-                os.remove(path + "\\" + filename)
+        for filename in os.listdir(path):
+            if filename != "demo.pdf":
+                os.remove(path  + "\\"  + filename)
+
