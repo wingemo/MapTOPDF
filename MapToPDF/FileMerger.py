@@ -23,18 +23,17 @@ import sys,os
 import multiprocessing
 from docx2pdf import convert
 from PIL import Image
+from PyPDF2 import PdfFileMerger
 
-class FileConverter:
-""" This class provides utility functions"""
-
-   PDF_OUTPUT_NAME = "output.pdf"
+class FileMerger:
+   """ This class provides utility functions"""
 
    def __init__(self, path):
         """Deletes placeholder for input"""
-        self.path = path
-        merge_files(self)
+        self.path = path + "\\" + "resultat"
+        self.merge_files(self.path)
 
-   def merge_files(self):
+   def merge_files(self, path):
         """Deletes placeholder for input"""
         open_pdf = []
         x = [a for a in os.listdir(path) if a.endswith(".pdf")]
@@ -45,7 +44,7 @@ class FileConverter:
             open_pdf.append(f)
             merger.append(f)
 
-        with open(path + "\\"+ PDF_OUTPUT_NAME, "wb") as fout:
+        with open(path + "\\"+ "demo.pdf", "wb") as fout:
             merger.write(fout)
 
         for pdf in open_pdf:
