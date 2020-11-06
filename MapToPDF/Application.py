@@ -28,7 +28,7 @@ from ttkthemes import ThemedStyle
 import time
 import _thread as thread
 from ConvertHandler import *
-from pathlib import Path
+
 
 class Application(tk.Frame):
     """ This class provides functions for graphical user interface and ConvertHandler object creation """
