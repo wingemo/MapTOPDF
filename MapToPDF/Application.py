@@ -19,62 +19,68 @@
     The version of the OpenAPI document: release-1.16
     by: https://openapi-generator.tech
 """
+
+import sys,os
 import tkinter as tk
-import _thread as thread
+from tkinter import messagebox, Menu, filedialog
 import tkinter.ttk as ttk
-from tkinter import messagebox, Menu
 from ttkthemes import ThemedStyle
+import time
+import _thread as thread
+from ConvertHandler import *
+from pathlib import Path
 
 class Application(tk.Frame):
-""" This class provides functions for graphical user interface and ConvertHandler object creation """
+    """ This class provides functions for graphical user interface and ConvertHandler object creation """
 
     def __init__(self, master):
         """This function handles the creation of graphical user interface object"""
-       
         super().__init__(master)
         self.pack()
-        
-        # Adds progressbar object to the graphical user interface
+
+         # Adds progressbar object to the graphical user interface
         self.progress = ttk.Progressbar(root, length = 100, mode = 'indeterminate')
         self.progress.place(x = 0, y = 40, height = 15, width = 620)
         self.progress['maximum'] = 100
-        
+
         # Adds button object to the graphical user interface
         self.w = ttk.Button(text ="Merge", command = self.thread_start)
         self.w.place(x = 629, y = 0, height = 35)
-        
+
         # Adds entry object to the graphical user interface
         self.entrythingy = ttk.Entry(font = "Calibri 12")
         self.entrythingy.place(x = 0, y = 0, height = 35, width = 620)
-        self.entrythingy.insert(0, "Klistra in sökvägen")
+        self.entrythingy.insert(0, "Select folder")
         self.entrythingy.configure(state="DISABLED")
-                
+
         # Binds events for the input object
         self.contents = tk.StringVar()
-        self.entrythingy["textvariable"] = self.contents
-        self.entrythingy.bind('<Key-Return>', self.print_contents)
-        self.entrythingy.event_add('<<Paste>>', '<Button-3>')
         self.entrythingy.bind('<Button-1>', self.on_click)
         self.entrythingy.bind('<Button-3>', self.on_click)
+        self.entrythingy["textvariable"] = self.contents
 
     def on_click(self, master):
         """Deletes placeholder for input"""
-        self.entrythingy.configure(state="NORMAL")
         self.entrythingy.delete(0, "")
-    
+        current_directory = filedialog.askdirectory().replace('/','\\')
+        self.entrythingy.insert(0, current_directory)
+
     def thread_start(self):
         """Starts the ConvertHandler class in a new thread"""
-        thread.start_new_thread(ConvertHanlder(self))
+        path = self.entrythingy.get()
+        thread_object = thread(ConvertHandler(self, path, self.progress));
+        thread_object.start()
 
     def exitProgram(self):
         """The function turns off the program"""
         exit()
 
 # Application entry point
-root = tk.Tk()
-root.title("Map To PDF - Produced by Philip Wingemo")
-root.geometry("700x60")
-style = ThemedStyle(root)
-style.set_theme("plastik")
-myapp = App(root)
-myapp.mainloop()
+if __name__ == "__main__":
+    root = tk.Tk()
+    root.title("Map To PDF - Produced by Philip Wingemo")
+    root.geometry("700x60")
+    style = ThemedStyle(root)
+    style.set_theme("plastik")
+    myapp = Application(root)
+    myapp.mainloop()
