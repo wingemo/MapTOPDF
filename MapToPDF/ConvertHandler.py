@@ -25,48 +25,57 @@ from docx2pdf import convert
 from PyPDF2 import PdfFileMerger
 from PIL import Image
 from tkinter import messagebox
+from FileConverter import *
+from FileMerger import *
+from FileDestroyer import *
 
-class ConvertHandler:
-""" This class provides utility functions"""
+class ConvertHandler():
+   """ This class provides utility functions"""
 
-   MESSAGEBOX_TITLE = "INFO"
-   SUCCESS_MESSAGE = "All files have been compiled into a pdf - Philip"
-
-   def __init__(self):
+   def __init__(self, self_object, path, progress):
         """Deletes placeholder for input"""
-        print_contents(self)
-        path = self.contents.get()
+        self.self = self_object
+        self.progress = progress
+        self.path = path
 
-        # and split into a list of lines:
-        update_progressbar(10)
-        files_to_pdf(self)
-        update_progressbar(30)
-        merge_files(self)
-        update_progressbar(50)
-        delete_files(self)
-        update_progressbar(0))
+        if(messagebox.askquestion("Merge files", path + ", Are You Sure?", icon='warning')):
+            # and split into a list of lines:
+            self.progress['maximum'] = 100
+            self.update_progressbar(10)
+            self.files_to_pdf(self.path)
+            self.update_progressbar(30)
+            self.merge_files(self.path)
+            self.update_progressbar(50)
+            self.delete_files(self.path)
+            self.update_progressbar(100)
+            self.update_progressbar(0)
+        else:
+            messagebox.showerror("Info", "You interrupted!")
 
-   def files_to_pdf(self): 
-        """Deletes placeholder for input"""
-        try:
-            FileConverter(self,path)
-        except Exception as e:
-            messagebox.showerror("Info", "Error" + str(e))
- 
-   def merge_files(self):
-        """Deletes placeholder for input"""
-        try:
-            FileMerger(self,path)
-        except Exception as e:
-            messagebox.showerror("Info", "Error" + str(e))
+   def update_progressbar(self, procent):
+        self.progress['value'] = procent
+        self.progress.update()
 
-   def delete_files(self):
+   def files_to_pdf(self, path):
         """Deletes placeholder for input"""
         try:
-            FileDestroyer(self,path)
+            FileConverter(path)
         except Exception as e:
             messagebox.showerror("Info", "Error" + str(e))
 
-        update_progressbar(100)
-        messagebox.showinfo(MESSAGEBOX_TITLE, SUCCESS_MESSAGE)
+   def merge_files(self, path):
+        """Deletes placeholder for input"""
+        try:
+            FileMerger(path)
+        except Exception as e:
+            messagebox.showerror("Info", "Error" + str(e))
+
+   def delete_files(self, path):
+        """Deletes placeholder for input"""
+        try:
+            FileDestroyer(path)
+        except Exception as e:
+            messagebox.showerror("Info", "Error" + str(e))
+
+        messagebox.showinfo("INFO", "All files have been compiled")
   
