@@ -25,31 +25,43 @@ from docx2pdf import convert
 from PIL import Image
 
 class FileConverter:
-""" This class provides utility functions"""
+   """ This class provides utility functions"""
 
    def __init__(self, path):
         """Deletes placeholder for input"""
         self.path = path
-        files_to_pdf(self)
+        self.files_to_pdf(path)
 
-   def files_to_pdf(self): 
+   def files_to_pdf(self, path):
+        jobs = []
+        os.mkdir(path + "\\" + "resultat")
+        os.chmod(path + "\\" + "resultat",0o666)
         """Deletes placeholder for input"""
         for filename in os.listdir(path):
             if filename.endswith(".docx") or filename.endswith(".doc"):
-                multiprocessing.Process(target=word_to_pdf, args=(pdf))
+                file = path + "\\" + filename
+                process = multiprocessing.Process(self.word_to_pdf(file, path))
+                jobs.append(process)
+                process.start()
                 continue
             elif filename.endswith(".jpg") or filename.endswith(".PNG")  or filename.endswith(".png"):
-                multiprocessing.Process(target=image_to_pdf, args=(pdf))
+                file = path + "\\" + filename
+                process = multiprocessing.Process(self.image_to_pdf(file))
+                jobs.append(process)
+                process.start()
                 continue
             else:
                 continue
-   
-   def word_to_pdf(self):
-       """Deletes placeholder for input"""
-       convert(path + "\\" + filename)
 
-   def image_to_pdf(self):
+        for job in jobs:
+            job.join()
+
+   def word_to_pdf(self, file, path):
        """Deletes placeholder for input"""
-       image1 = Image.open(path + "\\" + filename)
+       convert(file, path + "\\" + "resultat")
+
+   def image_to_pdf(self, file):
+       """Deletes placeholder for input"""
+       image1 = Image.open(file)
        im1 = image1.convert('RGB')
-       im1.save(path + "\\" + filename + ".pdf")
+       im1.save(path + "\\" + "resultat" + "\\" + filename + ".pdf")
