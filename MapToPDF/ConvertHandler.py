@@ -29,7 +29,7 @@ from FileConverter import *
 from FileMerger import *
 from FileDestroyer import *
 
-class ConvertHandler():
+class MergeHandler():
    """ This class provides utility functions"""
 
    def __init__(self, self_object, path, progress):
