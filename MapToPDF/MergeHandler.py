@@ -28,6 +28,7 @@ from tkinter import messagebox
 from FileConverter import *
 from FileMerger import *
 from FileDestroyer import *
+import _thread as thread
 
 class MergeHandler(Thread):
    """ This class provides utility functions"""
@@ -42,8 +43,8 @@ class MergeHandler(Thread):
         self.val = val
 
     def run(self):
+        # and split into a list of lines:
         if(messagebox.askquestion("Merge files", path + ", Are You Sure?", icon='warning')):
-            # and split into a list of lines:
             self.progress['maximum'] = 100
             self.update_progressbar(10)
             self.files_to_pdf(self.path)
@@ -57,6 +58,7 @@ class MergeHandler(Thread):
             messagebox.showerror("Info", "You interrupted!")
 
    def update_progressbar(self, procent):
+        # and split into a list of lines:
         self.progress['value'] = procent
         self.progress.update()
 
@@ -80,6 +82,5 @@ class MergeHandler(Thread):
             FileDestroyer(path)
         except Exception as e:
             messagebox.showerror("Info", "Error" + str(e))
-
+            
         messagebox.showinfo("INFO", "All files have been compiled")
-  
