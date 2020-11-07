@@ -27,7 +27,7 @@ import tkinter.ttk as ttk
 from ttkthemes import ThemedStyle
 import time
 import _thread as thread
-from ConvertHandler import *
+from MergeHandler import *
 
 
 class Application(tk.Frame):
@@ -68,7 +68,7 @@ class Application(tk.Frame):
     def thread_start(self):
         """Starts the ConvertHandler class in a new thread"""
         path = self.entrythingy.get()
-        thread_object = thread(ConvertHandler(self, path, self.progress));
+        thread_object = thread(MergeHandler(self, path, self.progress));
         thread_object.start()
 
     def exitProgram(self):
