@@ -73,7 +73,7 @@ class Application(tk.Frame):
 
     def exitProgram(self):
         """The function turns off the program"""
-        exit()
+        sys.exit()
 
 # Application entry point
 if __name__ == "__main__":
