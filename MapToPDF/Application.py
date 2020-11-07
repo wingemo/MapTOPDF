@@ -70,8 +70,7 @@ class Application(tk.Frame):
         path = self.entrythingy.get()
         thread_object = MergeHandler(self, path, self.progress);
         thread_object.start()
-
-    def create_mergehandler();
+        thread_object.join()
         
     def exitProgram(self):
         """The function turns off the program"""
