@@ -29,7 +29,6 @@ import time
 import _thread as thread
 from MergeHandler import *
 
-
 class Application(tk.Frame):
     """ This class provides functions for graphical user interface and ConvertHandler object creation """
 
