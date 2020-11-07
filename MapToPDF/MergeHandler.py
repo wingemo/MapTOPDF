@@ -29,15 +29,19 @@ from FileConverter import *
 from FileMerger import *
 from FileDestroyer import *
 
-class MergeHandler():
+class MergeHandler(Thread):
    """ This class provides utility functions"""
 
-   def __init__(self, self_object, path, progress):
+   def __init__(self, self_object, path, progress, val):
         """Deletes placeholder for input"""
         self.self = self_object
         self.progress = progress
         self.path = path
+        
+        Thread.__init__(self)
+        self.val = val
 
+    def run(self):
         if(messagebox.askquestion("Merge files", path + ", Are You Sure?", icon='warning')):
             # and split into a list of lines:
             self.progress['maximum'] = 100
