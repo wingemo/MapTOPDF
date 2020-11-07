@@ -68,9 +68,11 @@ class Application(tk.Frame):
     def thread_start(self):
         """Starts the ConvertHandler class in a new thread"""
         path = self.entrythingy.get()
-        thread_object = thread(MergeHandler(self, path, self.progress));
+        thread_object = MergeHandler(self, path, self.progress);
         thread_object.start()
 
+    def create_mergehandler();
+        
     def exitProgram(self):
         """The function turns off the program"""
         sys.exit()
