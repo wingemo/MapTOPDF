@@ -34,7 +34,7 @@ class FileConverter:
 
    def files_to_pdf(self, path):
         jobs = []
-        os.mkdirs(path + "\\" + "resultat")
+        os.mkdir(path + "\\" + "resultat")
         """Deletes placeholder for input"""
         for filename in os.listdir(path):
             if filename.endswith(".docx") or filename.endswith(".doc"):

@@ -26,8 +26,10 @@ from tkinter import messagebox, Menu, filedialog
 import tkinter.ttk as ttk
 from ttkthemes import ThemedStyle
 import time
-import _thread as thread
+from threading import Thread
+import threading
 from MergeHandler import *
+from PIL import ImageTk
 
 class Application(tk.Frame):
     """ This class provides functions for graphical user interface and ConvertHandler object creation """
@@ -67,10 +69,14 @@ class Application(tk.Frame):
     def thread_start(self):
         """Starts the ConvertHandler class in a new thread"""
         path = self.entrythingy.get()
-        thread_object = MergeHandler(self, path, self.progress);
+        thread_object = threading.Thread(self.create_object())
         thread_object.start()
         thread_object.join()
-        
+
+    def create_object(self):
+        path = self.entrythingy.get()
+        object = MergeHandler(self, path, self.progress)
+
     def exitProgram(self):
         """The function turns off the program"""
         sys.exit()
@@ -78,8 +84,10 @@ class Application(tk.Frame):
 # Application entry point
 if __name__ == "__main__":
     root = tk.Tk()
-    root.title("Map To PDF - Produced by Philip Wingemo")
+    root.title("Map To PDF © Philip Wingemo")
     root.geometry("700x60")
+    photo = ImageTk.PhotoImage(file = "ico-1.jpg")
+    root.iconphoto(False, photo)
     style = ThemedStyle(root)
     style.set_theme("plastik")
     myapp = Application(root)

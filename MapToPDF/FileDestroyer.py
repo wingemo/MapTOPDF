@@ -36,6 +36,5 @@ class FileDestroyer:
    def delete_files(self, path):
         """Deletes placeholder for input"""
         for filename in os.listdir(path):
-            if filename != "demo.pdf":
+            if filename != "output.pdf":
                 os.remove(path  + "\\"  + filename)
-
